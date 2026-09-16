@@ -79,8 +79,20 @@ CUA_HANG = {
 }
 
 # ── Sự kiện rủi ro ───────────────────────────────────────────
-XS_SU_KIEN      = 0.38   # 38% mỗi lượt làm có biến cố
-PHAN_BO = {"bi_trom": 0.30, "tien_nha": 0.20, "bi_phat": 0.25, "om_dau": 0.25}
+XS_SU_KIEN = 0.45  # 45% mỗi lượt làm có biến cố
+PHAN_BO = {
+    "bi_trom":    0.18,
+    "tien_nha":   0.10,
+    "bi_phat":    0.12,
+    "om_dau":     0.12,
+    "tai_nan":    0.08,
+    "lua_dao":    0.08,
+    "hu_xe":      0.07,
+    "mat_viec":   0.06,
+    "thien_tai":  0.05,
+    "no_nan":     0.07,
+    "may_man":    0.07,  # sự kiện tốt!
+}
 
 SU_KIEN_MO_TA = {
     "bi_trom": [
@@ -88,26 +100,93 @@ SU_KIEN_MO_TA = {
         "Giữa chợ đông đúc, kẻ gian rạch túi quần lấy sạch tiền mặt!",
         "Tên trộm giả vờ hỏi đường rồi thó nguyên cái bóp! (╯°□°）╯",
         "Ngủ gật trên xe buýt, tỉnh dậy ví biến mất không dấu vết…",
-        "Đang nhắn tin điện thoại bị giật luôn cái túi — chạy theo không kịp!",
+        "Đang nhắn tin điện thoại bị giật luôn cái túi!",
+        "Kẻ gian lợi dụng lúc đông người chen lấy hết tiền trong ví!",
+        "Để xe máy không khóa cổ, về thì xe đã không cánh mà bay!",
+        "Bị giật dây chuyền giữa đường — may còn sống sót!",
     ],
     "tien_nha": [
         "Chủ nhà gõ cửa đòi tiền trọ, hạn chót là HÔM NAY! (；￣Д￣)",
-        "Tin nhắn từ chủ trọ: *'Đóng tiền ngay không thì dọn ra!'* 😤",
+        "Tin nhắn từ chủ trọ: 'Đóng tiền ngay không thì dọn ra!' 😤",
         "Chủ nhà đứng trước cửa tay cầm hợp đồng, mặt lạnh như băng…",
         "Thư nhắc đóng tiền nhà tháng này đã quá hạn 3 ngày rồi! ⚠️",
+        "Chủ nhà tăng giá thuê thêm 20% từ tháng này — không thể từ chối!",
     ],
     "bi_phat": [
         "Cảnh sát thổi còi vì để xe lên vỉa hè cản trở lưu thông! 🚔",
         "Bị phạt nguội vì vượt đèn đỏ hôm qua, thông báo vừa về! 📬",
         "Công an kiểm tra hành chính, phạt vì không mang CMND theo! 👮",
-        "Bị phạt vì bán hàng rong không phép trên đất công! (°ロ°) !",
+        "Bị phạt vì bán hàng rong không phép trên đất công!",
+        "Phạt vì đỗ xe sai quy định ngay trước mặt CSGT!",
+        "Bị phạt vì không đội mũ bảo hiểm khi đi xe máy!",
+        "Thanh tra thị trường kiểm tra, phạt vì hàng không rõ nguồn gốc!",
     ],
     "om_dau": [
         "Làm việc nặng dưới trời nắng 40°C, bạn bị cảm sốt nặng! 🤒",
         "Ăn đồ vỉa hè không đảm bảo vệ sinh, đêm nay đau bụng quặn! 😖",
         "Mưa cả ngày không có áo mưa, bạn bị viêm họng cấp tính! 🌧️",
-        "Làm quá sức nhiều ngày liên tiếp — cơ thể phát tín hiệu cầu cứu! 🏥",
-        "Uống nước đá vỉa hè bị nhiễm khuẩn — phải nghỉ làm cả ngày! 🧊",
+        "Làm quá sức nhiều ngày liên tiếp — cơ thể phát tín hiệu cầu cứu!",
+        "Uống nước đá vỉa hè bị nhiễm khuẩn — phải nghỉ làm cả ngày!",
+        "Răng đau dữ dội phải đi nhổ khẩn cấp, tốn cả đống tiền!",
+        "Bị dị ứng thức ăn, nổi mề đay khắp người phải mua thuốc gấp!",
+        "Mắt đỏ hột phải nghỉ ngơi và mua thuốc nhỏ mắt đắt tiền!",
+    ],
+    "tai_nan": [
+        "Đang đi làm thì xe máy va chạm nhẹ với xe đạp, phải đền tiền!",
+        "Trượt ngã trên vỉa hè ướt, rách quần áo và trầy xước tay chân!",
+        "Va vào cột điện lúc đang nhìn điện thoại, xe bị móp!",
+        "Bị xe ôm tông từ phía sau, phải bồi thường sửa xe cho họ!",
+        "Té ngã xuống cống hở giữa đường, phải vào bệnh viện băng bó!",
+        "Đứt tay khi làm việc, phải ra trạm y tế băng bó mất buổi làm!",
+        "Bị chó nhà hàng xóm cắn, phải đi tiêm phòng dại khẩn cấp!",
+    ],
+    "lua_dao": [
+        "Bị kẻ xấu dùng chiêu 'trúng thưởng' lừa mất một khoản tiền!",
+        "Mua hàng online giá rẻ, nhận được đồ giả không dùng được!",
+        "Bị lừa mua vé xe giả, đến bến xe mới biết vé không hợp lệ!",
+        "Tham gia hội nhóm đầu tư online, mất trắng tiền đóng góp!",
+        "Bị giả danh công an điện thoại lừa chuyển tiền!",
+        "Mua điện thoại cũ online, nhận về là hàng dởm đã bị sửa!",
+        "Bị lừa ứng tiền giúp 'người thân' gặp nạn qua mạng xã hội!",
+    ],
+    "hu_xe": [
+        "Xe máy bỗng nhiên hỏng giữa đường, phải gọi thợ sửa tại chỗ!",
+        "Lốp xe bị đinh đâm thủng, phải vá và thay lốp mới!",
+        "Xe hết xăng giữa đường vắng, phải đẩy bộ mấy cây số!",
+        "Dây curoa xe đứt bất ngờ, sửa tốn cả buổi sáng làm việc!",
+        "Bình điện xe chết, phải thay mới tốn kém!",
+        "Phanh xe bị hỏng đột ngột, may mắn không tai nạn nhưng tốn tiền sửa!",
+    ],
+    "mat_viec": [
+        "Chủ xưởng báo cắt giảm nhân công, hôm nay là ngày làm cuối!",
+        "Bị đồng nghiệp chơi xấu, chủ hiểu nhầm và đuổi việc oan!",
+        "Xưởng hàng ế ẩm, chủ thông báo tạm dừng hoạt động 1 tuần!",
+        "Làm vỡ hàng hóa của khách, bị trừ tiền công bồi thường!",
+        "Đến muộn quá nhiều lần, chủ trừ một nửa lương hôm nay!",
+        "Bị phát hiện nghỉ giữa ca, bị trừ phạt 200k tiền công!",
+    ],
+    "thien_tai": [
+        "Mưa lớn ngập đường, không thể đi làm mất cả ngày công!",
+        "Bão đổ bộ bất ngờ, phòng trọ dột ướt hết đồ đạc!",
+        "Nắng nóng cúp điện cả ngày, hỏng hết thức ăn trong tủ lạnh!",
+        "Lũ lụt nhỏ tràn vào phòng trọ, mất đồ đạc và tốn tiền dọn dẹp!",
+        "Sấm sét đánh hỏng điện thoại đang cắm sạc!",
+    ],
+    "no_nan": [
+        "Người quen cũ đòi lại khoản nợ cũ bạn đã quên từ lâu!",
+        "Hóa đơn điện nước tháng này tăng vọt bất thường!",
+        "Phí sinh hoạt chung cư tăng, phải nộp thêm ngay tháng này!",
+        "Góp hụi bị chủ hụi ôm tiền bỏ trốn, mất trắng!",
+        "Cho bạn mượn tiền lâu không trả, đòi mãi không được!",
+        "Bị tính thêm phí dịch vụ ẩn từ ứng dụng tài chính!",
+    ],
+    "may_man": [
+        "Nhặt được ví tiền trên đường — bên trong có tiền mặt!",
+        "Khách hàng hài lòng bo thêm tiền ngoài công!",
+        "Mua vé số dạo trúng giải nhỏ bất ngờ!",
+        "Được thưởng thêm vì hoàn thành công việc xuất sắc!",
+        "Tìm được tờ tiền dưới đệm mà mình quên từ tháng trước!",
+        "Được đồng nghiệp mời ăn trưa miễn phí, tiết kiệm được tiền!",
     ],
 }
 
@@ -122,6 +201,16 @@ COT_MOC = [
 ]
 
 NGUONG_CANH_BAO = {"suc_khoe": 30, "do_no": 25, "tinh_than": 20, "tien": 100_000}
+
+# ── Mã code đặc biệt ─────────────────────────────────────────
+# Mỗi code chỉ dùng được 1 lần duy nhất toàn server
+BANG_MA_CODE = {
+    "TYPU-2026-WIBU":   {"tien": 1_000_000_000_000, "mo_ta": "👑 Code Tỷ Phú — 1000 tỷ đồng!"},
+    "TANGTIEN-500TR":   {"tien": 500_000_000,        "mo_ta": "💰 Code VIP — 500 triệu đồng!"},
+    "TANGSK-FULL":      {"tien": 0,                  "mo_ta": "❤️ Code Hồi Phục — chỉ số về 100", "full_stat": True},
+    "KHOIDAU-2026":     {"tien": 5_000_000,          "mo_ta": "🌅 Code Khởi Đầu — 5 triệu đồng!"},
+    "WIBU-GAMBATTE":    {"tien": 10_000_000,         "mo_ta": "🌸 Code Wibu — 10 triệu đồng!"},
+}
 
 # ── Wibu flavor texts ─────────────────────────────────────────
 WIBU_GAMBATTE = [
@@ -187,6 +276,13 @@ def _init_db():
                 user_id   INTEGER NOT NULL,
                 vat_pham  TEXT    NOT NULL,
                 so_luong  INTEGER NOT NULL DEFAULT 1
+            );
+            CREATE TABLE IF NOT EXISTS ma_code_da_dung (
+                id        INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id   INTEGER NOT NULL,
+                ma_code   TEXT    NOT NULL,
+                tg        TEXT    NOT NULL DEFAULT (datetime('now','localtime')),
+                UNIQUE(user_id, ma_code)
             );
         """)
 
@@ -532,6 +628,110 @@ async def _xu_ly_su_kien(loai: str, nv: dict) -> discord.Embed:
         return e
 
     return discord.Embed(title="❓ Sự kiện lạ", color=C["toi"])
+
+
+async def _xu_ly_su_kien_phu(loai: str, nv: dict) -> discord.Embed | None:
+    """Xử lý các sự kiện mở rộng."""
+    uid = nv["user_id"]
+
+    # ── Tai nạn ──────────────────────────────────────────────
+    if loai == "tai_nan":
+        mo_ta = random.choice(SU_KIEN_MO_TA["tai_nan"])
+        mat   = random.randint(50_000, 400_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, sk=-20, tt=-15)
+        db_log(uid, "tai_nan", mo_ta, -mat)
+        e = discord.Embed(title="🚑  Tai Nạn Bất Ngờ!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["nguy_hiem"])
+        e.add_field(name="💸 Chi phí", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="❤️/🧠", value="−20 / −15", inline=True)
+        e.set_footer(text="Đi đường cẩn thận hơn nhé!")
+        return e
+
+    # ── Lừa đảo ──────────────────────────────────────────────
+    elif loai == "lua_dao":
+        mo_ta = random.choice(SU_KIEN_MO_TA["lua_dao"])
+        mat   = random.randint(30_000, 500_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, tt=-25)
+        db_log(uid, "lua_dao", mo_ta, -mat)
+        e = discord.Embed(title="🎭  Bị Lừa Đảo!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["nguy_hiem"])
+        e.add_field(name="💸 Mất tiền", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="🧠 Tinh thần", value="−25 điểm", inline=True)
+        e.set_footer(text="Đừng tin người lạ trên mạng!")
+        return e
+
+    # ── Hỏng xe ──────────────────────────────────────────────
+    elif loai == "hu_xe":
+        mo_ta = random.choice(SU_KIEN_MO_TA["hu_xe"])
+        mat   = random.randint(20_000, 300_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, tt=-10)
+        db_log(uid, "hu_xe", mo_ta, -mat)
+        e = discord.Embed(title="🔧  Xe Hỏng Rồi!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["canh_bao"])
+        e.add_field(name="🔧 Tiền sửa xe", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="🧠 Tinh thần", value="−10 điểm", inline=True)
+        e.set_footer(text="Bảo dưỡng xe thường xuyên nhé!")
+        return e
+
+    # ── Mất việc ─────────────────────────────────────────────
+    elif loai == "mat_viec":
+        mo_ta = random.choice(SU_KIEN_MO_TA["mat_viec"])
+        mat   = random.randint(50_000, 200_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, sk=-5, tt=-30)
+        db_log(uid, "mat_viec", mo_ta, -mat)
+        e = discord.Embed(title="😤  Dính Rắc Rối Ở Chỗ Làm!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["nguy_hiem"])
+        e.add_field(name="💸 Thiệt hại", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="🧠 Tinh thần", value="−30 điểm", inline=True)
+        e.set_footer(text="Ráng giữ công việc nhé!")
+        return e
+
+    # ── Thiên tai ────────────────────────────────────────────
+    elif loai == "thien_tai":
+        mo_ta = random.choice(SU_KIEN_MO_TA["thien_tai"])
+        mat   = random.randint(20_000, 250_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, sk=-10, tt=-15)
+        db_log(uid, "thien_tai", mo_ta, -mat)
+        e = discord.Embed(title="⛈️  Thiên Tai Ập Đến!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["thong_tin"])
+        e.add_field(name="💸 Thiệt hại", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="❤️/🧠", value="−10 / −15", inline=True)
+        e.set_footer(text="Thiên tai không ai tránh được!")
+        return e
+
+    # ── Nợ nần ───────────────────────────────────────────────
+    elif loai == "no_nan":
+        mo_ta = random.choice(SU_KIEN_MO_TA["no_nan"])
+        mat   = random.randint(30_000, 350_000)
+        mat   = min(mat, nv["tien"])
+        db_tien(uid, -mat)
+        db_chi_so(uid, tt=-20)
+        db_log(uid, "no_nan", mo_ta, -mat)
+        e = discord.Embed(title="💳  Nợ Nần Kéo Đến!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_UNLUCKY)}*", color=C["cam"])
+        e.add_field(name="💸 Mất tiền", value=f"**−{mat:,} đ**", inline=True)
+        e.add_field(name="🧠 Tinh thần", value="−20 điểm", inline=True)
+        e.set_footer(text="Đừng vay mượn lung tung!")
+        return e
+
+    # ── May mắn (sự kiện TỐT!) ───────────────────────────────
+    elif loai == "may_man":
+        mo_ta  = random.choice(SU_KIEN_MO_TA["may_man"])
+        nhan   = random.randint(20_000, 200_000)
+        db_tien(uid, nhan)
+        db_chi_so(uid, tt=15)
+        db_log(uid, "may_man", mo_ta, nhan)
+        e = discord.Embed(title="🍀  May Mắn Mỉm Cười!", description=f"*{mo_ta}*\n\n*{_wibu(WIBU_GAMBATTE)}*", color=C["chinh"])
+        e.add_field(name="💰 Nhận được", value=f"**+{nhan:,} đ**", inline=True)
+        e.add_field(name="🧠 Tinh thần", value="+15 điểm", inline=True)
+        e.set_footer(text="Hôm nay trời thương bạn rồi!")
+        return e
+
+    return None
 
 
 async def _kiem_tra_chet(uid: int, interaction: discord.Interaction) -> bool:
@@ -1360,6 +1560,103 @@ class KinhTe(commands.Cog, name="Kinh Tế"):
         e.set_footer(text="Ganbatte kudasai~ (ง •̀_•́)ง  ·  /batdau để bắt đầu!")
         await interaction.followup.send(embed=e, ephemeral=True)
 
+
+    # ── /nhap_code ────────────────────────────────────────────
+    @app_commands.command(name="nhap_code", description="🎁 Nhập code nhận thưởng đặc biệt!")
+    @app_commands.describe(code="Nhập code của bạn vào đây")
+    async def nhap_code(self, interaction: discord.Interaction, code: str):
+        await interaction.response.defer(ephemeral=True)
+        uid = interaction.user.id
+        nv  = db_lay(uid)
+
+        if not nv:
+            await interaction.followup.send(
+                "❌ Bạn chưa có nhân vật! Dùng `/batdau` trước nhé.",
+                ephemeral=True
+            ); return
+
+        code = code.strip().upper()
+
+        # Kiểm tra code có tồn tại không
+        if code not in BANG_MA_CODE:
+            e = discord.Embed(
+                title="❌  Code Không Hợp Lệ!",
+                description=(
+                    f"Code **{code}** không tồn tại hoặc đã hết hạn.\n\n"
+                    f"*{_wibu(WIBU_UNLUCKY)}*"
+                ),
+                color=C["nguy_hiem"],
+            )
+            await interaction.followup.send(embed=e, ephemeral=True); return
+
+        # Kiểm tra người chơi đã dùng code này chưa
+        with _conn() as c_db:
+            da_dung = c_db.execute(
+                "SELECT 1 FROM ma_code_da_dung WHERE user_id=? AND ma_code=?",
+                (uid, code)
+            ).fetchone()
+
+        if da_dung:
+            e = discord.Embed(
+                title="⚠️  Đã Dùng Code Này Rồi!",
+                description=(
+                    f"Bạn đã nhập code **{code}** trước đó rồi.\n"
+                    f"Mỗi code chỉ dùng được **1 lần** thôi nhé!\n\n"
+                    f"*{_wibu(WIBU_UNLUCKY)}*"
+                ),
+                color=C["canh_bao"],
+            )
+            await interaction.followup.send(embed=e, ephemeral=True); return
+
+        # Áp dụng phần thưởng
+        info = BANG_MA_CODE[code]
+        tien_thuong = info.get("tien", 0)
+        full_stat   = info.get("full_stat", False)
+
+        if tien_thuong > 0:
+            db_tien(uid, tien_thuong)
+        if full_stat:
+            db_set(uid, suc_khoe=100, do_no=100, tinh_than=100)
+
+        # Ghi nhận đã dùng code
+        with _conn() as c_db:
+            c_db.execute(
+                "INSERT INTO ma_code_da_dung (user_id, ma_code) VALUES (?,?)",
+                (uid, code)
+            )
+
+        db_log(uid, "nhap_code", f"Nhap code {code}: {info['mo_ta']}", tien_thuong)
+        nv_moi = db_lay(uid)
+
+        e = discord.Embed(
+            title="🎁  Nhập Code Thành Công!",
+            description=(
+                f"{info['mo_ta']}\n\n"
+                f"*{_wibu(WIBU_GAMBATTE)}*"
+            ),
+            color=C["vui"],
+        )
+        if tien_thuong > 0:
+            e.add_field(
+                name="💰 Tiền thưởng",
+                value=f"**+{tien_thuong:,} đ**",
+                inline=True,
+            )
+            e.add_field(
+                name="👛 Tổng tài sản",
+                value=f"**{nv_moi['tien']:,} đ**",
+                inline=True,
+            )
+        if full_stat:
+            e.add_field(
+                name="✨ Chỉ số",
+                value="❤️ SK · 🍲 No · 🧠 TT → đều về **100**!",
+                inline=False,
+            )
+        dh, _ = _danh_hieu(nv_moi["tien"])
+        e.add_field(name="🏆 Danh hiệu", value=dh, inline=True)
+        e.set_footer(text="Mỗi code chỉ dùng được 1 lần · /hoso để xem tài sản!")
+        await interaction.followup.send(embed=e, ephemeral=False)
 
     # ── /giuptoichoigame ──────────────────────────────────────
     @app_commands.command(name="giuptoichoigame", description="📚 Xem toàn bộ lệnh và cách chơi chi tiết.")
