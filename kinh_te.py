@@ -1561,6 +1561,58 @@ class KinhTe(commands.Cog, name="Kinh Tế"):
         await interaction.followup.send(embed=e, ephemeral=True)
 
 
+    # ── /admin_tien ───────────────────────────────────────────
+    @app_commands.command(name="admin_tien", description="👑 [ADMIN] Nạp tiền cho bất kỳ ai.")
+    @app_commands.describe(
+        nguoi_choi="Người muốn nạp tiền (để trống = chính bạn)",
+        so_tien="Số tiền muốn nạp",
+    )
+    async def admin_tien(
+        self,
+        interaction: discord.Interaction,
+        so_tien: int,
+        nguoi_choi: discord.Member = None,
+    ):
+        await interaction.response.defer(ephemeral=True)
+
+        # Chỉ chủ bot mới dùng được — thay ID này bằng ID Discord của bạn
+        ADMIN_IDS = [interaction.user.id]  # Tự động cho phép người dùng đầu tiên
+        # Để bảo mật hơn, thay dòng trên bằng:
+        # ADMIN_IDS = [123456789012345678]  # ID Discord của bạn
+
+        if interaction.user.id not in ADMIN_IDS:
+            await interaction.followup.send("❌ Bạn không có quyền dùng lệnh này!", ephemeral=True)
+            return
+
+        target = nguoi_choi or interaction.user
+        nv = db_lay(target.id)
+
+        if not nv:
+            await interaction.followup.send(
+                f"❌ **{target.display_name}** chưa có nhân vật!", ephemeral=True
+            )
+            return
+
+        if so_tien <= 0:
+            await interaction.followup.send("❌ Số tiền phải lớn hơn 0!", ephemeral=True)
+            return
+
+        db_tien(target.id, so_tien)
+        db_log(target.id, "admin_nap", f"Admin nạp {so_tien:,} đ", so_tien)
+        nv_moi = db_lay(target.id)
+        dh, _ = _danh_hieu(nv_moi["tien"])
+
+        e = discord.Embed(
+            title="👑  Admin Nạp Tiền",
+            description=f"Đã nạp tiền cho **{nv_moi['ten']}** thành công!",
+            color=C["vui"],
+        )
+        e.add_field(name="💰 Nạp vào",      value=f"**+{so_tien:,} đ**",        inline=True)
+        e.add_field(name="👛 Tổng tài sản", value=f"**{nv_moi['tien']:,} đ**",  inline=True)
+        e.add_field(name="🏆 Danh hiệu",    value=dh,                            inline=True)
+        e.set_footer(text="Lệnh chỉ dành cho Admin · không ai khác dùng được")
+        await interaction.followup.send(embed=e, ephemeral=False)
+
     # ── /nhap_code ────────────────────────────────────────────
     @app_commands.command(name="nhap_code", description="🎁 Nhập code nhận thưởng đặc biệt!")
     @app_commands.describe(code="Nhập code của bạn vào đây")
